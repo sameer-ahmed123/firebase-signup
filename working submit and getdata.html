@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sign_up</title>
+    <!-- <link rel="stylesheet" href="signup.css"> -->
+</head>
+
+<body>
+    <button id="submit">submitData</button>
+    <button id="getdata">GetData</button>
+
+
+    <div class="signup-box">
+        <h1>Sign Up</h1>
+        <form>
+            <label>First Name</label>
+            <input id="firstname" type="text" placeholder="first name">
+            <label>Last Name</label>
+            <input id="lastname" type="text" placeholder="last name">
+            <label>E-mail:</label>
+            <input id="email" type="email" placeholder="E-mail">
+            <labeL>Password:</labeL>
+            <input id="password" type="password" placeholder="password">
+            <label>Confirm Password</label>
+            <input id="Cpassword" type="password" placeholder="confirm password">
+            <input value="submit" type="submit" id="submitdata">
+        </form>
+        <p>by clicking you agree to our<br>
+            <a href="#">terms of services</a>
+        </p>
+    </div>
+
+
+
+    <script src="https://www.gstatic.com/firebasejs/8.1.2/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.1.2/firebase-auth.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.1.2/firebase-database.js"></script>
+
+    <script type="module">
+        // Import the functions you need from the SDKs you need
+        // import { initializeApp } from "https://www.gstatic.com/firebasejs/8.1.2/firebase-app.js";
+        //import { getAnalytics } from "https://www.gstatic.com/firebasejs/8.1.2/firebase-analytics.js";
+        // TODO: Add SDKs for Firebase products that you want to use
+        // https://firebase.google.com/docs/web/setup#available-libraries
+
+        // Your web app's Firebase configuration
+        // For Firebase JS SDK v7.20.0 and later, measurementId is optional
+        const firebaseConfig = {
+            apiKey: "AIzaSyAbmsWaB_xpj5l4EEFStBiS8ovegxzAWIE",
+            authDomain: "signin-fbe32.firebaseapp.com",
+            projectId: "signin-fbe32",
+            storageBucket: "signin-fbe32.appspot.com",
+            messagingSenderId: "622379387575",
+            appId: "1:622379387575:web:e73458b7242f5c551b1b32",
+            measurementId: "G-CBW63P4EXP"
+        };
+
+        // Initialize Firebase
+        firebase.initializeApp(firebaseConfig);
+        document.getElementById("submit").onclick = function submitData() {
+            // alert(document.getElementById('firstname').value);
+            firebase.database().ref('credentials').push({
+                FirstName: "Ali"
+            })
+        }
+        document.getElementById("submitdata").onclick = function submitData() {
+            // alert(document.getElementById('firstname').value);
+            // var firstName = document.getElementById('firstname').value;
+            // var lastName = document.getElementById('lastname').value;
+            // var email = document.getElementById('email').value;
+            // var password = document.getElementById('password').value;
+            // var confirmPassword = document.getElementById('Cpassword').value;
+
+            // alert(firstName+lastName+email+password+confirmPassword)
+
+            firebase.database().ref('credentials').push({
+                FirstName: document.getElementById('firstname').value,
+                LastName: document.getElementById('lastname').value,
+                Email: document.getElementById('email').value,
+                Password: document.getElementById('password').value,
+                ConfirmPassword: document.getElementById('Cpassword').value
+            })
+        }
+        document.getElementById('getdata').onclick = function gatData() {
+            firebase.database().ref('/credentials').once('value', function (snapshot) {
+                snapshot.forEach(function (childSnapshot) {
+                    var child = childSnapshot.val();
+                    alert(child['Email']);
+                })
+            })
+        }
+
+
+
+
+
+
+    </script>
+
+
+
+    <p class="para2">Already have an account?<a href="login.html">Log in</a></p>
+</body>
+
+</html>

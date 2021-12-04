@@ -1,0 +1,6 @@
+firebase realtime database only accepting input if input is given from a <button=type> and not accepting input from<submit=type>
+
+getdata  button not working withthe connected firebase database 
+
+
+(both ..input from submit and get data button is workin in html made by sir)

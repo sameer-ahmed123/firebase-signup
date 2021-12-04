@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>MCQ's</title>
+</head>
+
+<body>
+  <form id="quiz">
+    <div>
+      <p>1. How many provinces of Pakistan.</p>
+      <input type="radio" value="1" name="q1" />1 <br />
+      <input type="radio" value="2" name="q1" />2 <br />
+      <input type="radio" value="3" name="q1" />3 <br />
+      <input type="radio" value="4" name="q1" />4 <br />
+    </div>
+
+    <div>
+      <p>2. What is the biggest city of Pakistan.</p>
+      <input type="radio" value="Islamabad" name="q2" />Islamabad <br />
+      <input type="radio" value="Karachi" name="q2" />Karachi <br />
+      <input type="radio" value="Rawalpindi" name="q2" />Rawalpindi <br />
+      <input type="radio" value="Lahore" name="q2" />Lahore <br />
+    </div>
+    <div>
+      <p>3. What is the largest number?</p>
+      <input type="radio" value="1" name="q3" />1<br />
+      <input type="radio" value="3" name="q3" />3<br />
+      <input type="radio" value="16" name="q3" />16<br />
+      <input type="radio" value="19" name="q3" />19<br />
+    </div>
+    <div>
+      <p>4. waht is the capital of pakistan?</p>
+      <input type="radio" value="Islamabad" name="q4" />Islamabad<br />
+      <input type="radio" value="faisalabad" name="q4" />faisalabad<br />
+      <input type="radio" value="quetta" name="q4" />quetta<br />
+      <input type="radio" value="Lahore" name="q4" />Lahore<br />
+    </div>
+    <div>
+      <p>5. which country has largest population</p>
+      <input type="radio" value="china" name="q5" />china<br />
+      <input type="radio" value="india" name="q5" />india<br />
+      <input type="radio" value="USA" name="q5" />USA<br />
+      <input type="radio" value="Pakistan" name="q5" />Pakistan<br />
+    </div>
+    <di>
+      <p>6. which is the most used OS?</p>
+      <input type="radio" value="windows" name="q6" />windows<br />
+      <input type="radio" value="linux" name="q6" />linux<br />
+      <input type="radio" value="Dos" name="q6" />Dos<br />
+      <input type="radio" value="mac os" name="q6" />mac os<br />
+    </di>
+    <div>
+      <p>7. which is the largest continent ?</p>
+      <input type="radio" name="q7" value="Asia" />Asia<br />
+      <input type="radio" name="q7" value="Antartica" />Antartica<br />
+      <input type="radio" name="q7" value="Australia" />Australia<br />
+      <input type="radio" name="q7" value="America" />America<br />
+    </div>
+    <div>
+      <p>8. what is the national animal of pakistan?</p>
+      <input type="radio" name="q8" value="markhor">markhor<br>
+      <input type="radio" name="q8" value="ghora">ghora<br>
+      <input type="radio" name="q8" value="qabootar">qabootar<br>
+      <input type="radio" name="q8" value="bakri">bakri<br>
+    </div>
+    <div>
+      <p>9. when is the independence day of pakistan?</p>
+      <input type="radio" name="q9" value="14 aug 1947">14 aug 1947<br>
+      <input type="radio" name="q9" value="14 jul 1947">15 jul 1947<br>
+      <input type="radio" name="q9" value="14 dec 1947">11 dec 1947<br>
+      <input type="radio" name="q9" value="14 mar 1947">10 mar 1947<br>
+    </div>
+    <div>
+      <p>10. The Men Who Ruled India: was written by__________?</p>
+      <input type="radio" name="q10" value="Rousseau">Rousseau<br>
+      <input type="radio" name="q10" value="Philip Mason">Philip Mason<br>
+      <input type="radio" name="q10" value="G. Allana">G. Allana<br>
+      <input type="radio" name="q10" value="Michal jordan">Michal jordan<br>
+    </div>
+
+    <input type="submit" value="Submit" onclick="submitAnswers()" />
+  </form>
+
+  <script>
+    function submitAnswers() {
+      var score = 0;
+
+      var q1 = document.forms.quiz.q1.value;
+      var q2 = document.forms.quiz.q2.value;
+      var q3 = document.forms.quiz.q3.value;
+      var q4 = document.forms.quiz.q4.value;
+      var q5 = document.forms.quiz.q5.value;
+      var q6 = document.forms.quiz.q6.value;
+      var q7 = document.forms.quiz.q7.value;
+      var q8 = document.forms.quiz.q8.value;
+      var q9 = document.forms.quiz.q9.value;
+      var q10 = document.forms.quiz.q10.value;
+
+      if (q1 == 4) {
+        score++;
+      }
+      if (q2 == "Karachi") {
+        score++;
+      }
+      if (q3 == 19) {
+        score++;
+      }
+      if (q4 == "Islamabad") {
+        score++;
+      }
+      if (q5 == "china") {
+        score++;
+      }
+      if (q6 == "windows") {
+        score++;
+      }
+      if (q7 == "Asia") {
+        score++;
+      }
+      if (q8 == "markhor") {
+        score++;
+      }
+      if (q9 == "14 aug 1947") {
+        score++;
+      }
+      if (q10 == "Philip Mason") {
+        score++;
+      }
+
+      alert("your score is \=" + score);
+    }
+  </script>
+</body>
+
+</html>
